@@ -1,23 +1,25 @@
 import React, { useState } from "react";
 
-const signin = () => {
+const Signin = () => {
   const [email, setEmail] = useState("");
   const [isValidEmail, setIsValidEmail] = useState(true);
 
   const validateEmail = () => {
-  
-    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}\..+$/;
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@(?!gmail\.com)(?:[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}|[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}\.edu)$/;
     setIsValidEmail(emailRegex.test(email));
   };
-
-  const handleKeyDown = (e: { key: string; }) => {
+  
+  
+  
+  
+  const handleKeyDown = (e: { key: string }) => {
     if (e.key === "Enter") {
       validateEmail();
     }
   };
 
   return (
-    <div>
+    <div id="signin">
       <div>
         <input
           placeholder="school email"
@@ -26,10 +28,12 @@ const signin = () => {
           onBlur={validateEmail}
           onKeyDown={handleKeyDown}
         />
-        {!isValidEmail && <p className="text-red-600">Please enter a valid school email.</p>}
+        {!isValidEmail && (
+          <p className="text-red-600 font-semibold">Please enter valid school email.</p>
+        )}
       </div>
     </div>
   );
 };
 
-export default signin;
+export default Signin;
