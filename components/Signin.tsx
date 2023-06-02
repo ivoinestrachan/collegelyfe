@@ -6,10 +6,11 @@ const Signin = () => {
   const [isButtonDisabled, setIsButtonDisabled] = useState(true);
 
   const validateEmail = () => {
-    const emailRegex =
-      /^[a-zA-Z0-9._%+-]+@(?!gmail\.com)(?:[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}|[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}\.edu)$/;
-    setIsValidEmail(emailRegex.test(email));
-    setIsButtonDisabled(!emailRegex.test(email));
+    // const emailRegex =
+    //   /^[a-zA-Z0-9._%+-]+@(?!gmail\.com)(?:[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}|[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}\.edu)$/;
+    // setIsValidEmail(emailRegex.test(email));
+    // setIsButtonDisabled(!emailRegex.test(email));
+    setIsButtonDisabled(true);
   };
 
   const handleKeyDown = (e: { key: string }) => {
